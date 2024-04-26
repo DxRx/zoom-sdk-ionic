@@ -38,6 +38,7 @@ import us.zoom.sdk.MeetingServiceListener;
 import us.zoom.sdk.MeetingSettingsHelper;
 import us.zoom.sdk.MeetingStatus;
 import us.zoom.sdk.MeetingViewsOptions;
+import us.zoom.sdk.MobileRTCFocusModeShareType;
 import us.zoom.sdk.SDKNotificationServiceError;
 import us.zoom.sdk.StartMeetingOptions;
 import us.zoom.sdk.StartMeetingParams4NormalUser;
@@ -1501,8 +1502,48 @@ public class Zoom extends CordovaPlugin implements ZoomSDKAuthenticationListener
 
     }
 
-  @Override
-  public void onRequestLocalRecordingPrivilegeChanged(LocalRecordingRequestPrivilegeStatus localRecordingRequestPrivilegeStatus) {
+    @Override
+    public void onRequestLocalRecordingPrivilegeChanged(LocalRecordingRequestPrivilegeStatus localRecordingRequestPrivilegeStatus) {
 
-  }
+    }
+
+    @Override
+    public void onAllowParticipantsRequestCloudRecording(boolean b) {
+
+    }
+
+    @Override
+    public void onVideoAlphaChannelStatusChanged(boolean b) {
+
+    }
+
+    @Override
+    public void onFocusModeShareTypeChanged(MobileRTCFocusModeShareType mobileRTCFocusModeShareType) {
+
+    }
+
+    @Override
+    public void onFocusModeStateChanged(boolean b) {
+
+    }
+
+    @Override
+    public void onUVCCameraStatusChange(String s, UVCCameraStatus uVCCameraStatus) {
+
+    }
+
+    @Override
+    public void onCloudRecordingStorageFull(long l) {
+
+    }
+
+    @Override
+    public void onParticipantProfilePictureStatusChange(boolean b) {
+
+    }
+
+    @Override
+    public void onAICompanionActiveChangeNotice(boolean b) {
+
+    }
 }
