@@ -18,8 +18,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Locale.Builder;
 
+import us.zoom.sdk.CameraControlRequestResult;
+import us.zoom.sdk.CameraControlRequestType;
 import us.zoom.sdk.ChatMessageDeleteType;
 import us.zoom.sdk.FreeMeetingNeedUpgradeType;
+import us.zoom.sdk.ICameraControlRequestHandler;
+import us.zoom.sdk.IMeetingArchiveConfirmHandler;
+import us.zoom.sdk.IMeetingInputUserInfoHandler;
 import us.zoom.sdk.IRequestLocalRecordingPrivilegeHandler;
 import us.zoom.sdk.InMeetingAudioController;
 import us.zoom.sdk.InMeetingChatController;
@@ -49,6 +54,9 @@ import us.zoom.sdk.ZoomAuthenticationError;
 import us.zoom.sdk.ZoomError;
 import us.zoom.sdk.ZoomSDK;
 import us.zoom.sdk.ZoomSDKAuthenticationListener;
+import us.zoom.sdk.ZoomSDKFileReceiver;
+import us.zoom.sdk.ZoomSDKFileSender;
+import us.zoom.sdk.ZoomSDKFileTransferInfo;
 import us.zoom.sdk.ZoomSDKInitParams;
 import us.zoom.sdk.ZoomSDKInitializeListener;
 import us.zoom.sdk.ZoomUIService;
@@ -1041,11 +1049,6 @@ public class Zoom extends CordovaPlugin implements ZoomSDKAuthenticationListener
         Log.v(TAG, "onZoomAuthIdentityExpired is triggered");
     }
 
-    @Override
-    public void onNotificationServiceStatus(SDKNotificationServiceStatus sdkNotificationServiceStatus) {
-
-    }
-
   @Override
   public void onNotificationServiceStatus(SDKNotificationServiceStatus sdkNotificationServiceStatus, SDKNotificationServiceError sdkNotificationServiceError) {
 
@@ -1273,10 +1276,6 @@ public class Zoom extends CordovaPlugin implements ZoomSDKAuthenticationListener
     }
 
     @Override
-    public void onMeetingCoHostChanged(long l) {
-    }
-
-    @Override
     public void onMeetingCoHostChange(long l, boolean b) {
 
     }
@@ -1297,10 +1296,6 @@ public class Zoom extends CordovaPlugin implements ZoomSDKAuthenticationListener
     @Override
     public void onFollowHostVideoOrderChanged(boolean b) {
 
-    }
-
-    @Override
-    public void onSpotlightVideoChanged(boolean b) {
     }
 
     @Override
@@ -1361,10 +1356,6 @@ public class Zoom extends CordovaPlugin implements ZoomSDKAuthenticationListener
     }
 
     @Override
-    public void onUserNetworkQualityChanged(long userId) {
-    }
-
-    @Override
     public void onSinkMeetingVideoQualityChanged(VideoQuality videoQuality, long l) {
 
     }
@@ -1399,11 +1390,6 @@ public class Zoom extends CordovaPlugin implements ZoomSDKAuthenticationListener
 
     @Override
     public void onSinkPanelistChatPrivilegeChanged(InMeetingChatController.MobileRTCWebinarPanelistChatPrivilege mobileRTCWebinarPanelistChatPrivilege) {
-
-    }
-
-    @Override
-    public void onUserNameChanged(long l, String s) {
 
     }
 
@@ -1544,6 +1530,56 @@ public class Zoom extends CordovaPlugin implements ZoomSDKAuthenticationListener
 
     @Override
     public void onAICompanionActiveChangeNotice(boolean b) {
+
+    }
+
+    @Override
+    public void onJoinMeetingNeedUserInfo(IMeetingInputUserInfoHandler iMeetingInputUserInfoHandler) {
+
+    }
+
+    @Override
+    public void onWebinarNeedInputScreenName(InMeetingEventHandler inMeetingEventHandler) {
+
+    }
+
+    @Override
+    public void onSinkJoin3rdPartyTelephonyAudio(String s) {
+
+    }
+
+    @Override
+    public void onUserConfirmToStartArchive(IMeetingArchiveConfirmHandler iMeetingArchiveConfirmHandler) {
+
+    }
+
+    @Override
+    public void onCameraControlRequestReceived(long l, CameraControlRequestType cameraControlRequestType, ICameraControlRequestHandler iCameraControlRequestHandler) {
+
+    }
+
+    @Override
+    public void onCameraControlRequestResult(long l, boolean b) {
+
+    }
+
+    @Override
+    public void onCameraControlRequestResult(long l, CameraControlRequestResult cameraControlRequestResult) {
+
+    }
+
+    @Override
+    public void onFileSendStart(ZoomSDKFileSender zoomSDKFileSender) {
+
+    }
+
+    @Override
+    public void onFileReceived(ZoomSDKFileReceiver zoomSDKFileReceiver) {
+
+    }
+
+    @Override
+    public void onFileTransferProgress(ZoomSDKFileTransferInfo zoomSDKFileTransferInfo) {
 
     }
 }
